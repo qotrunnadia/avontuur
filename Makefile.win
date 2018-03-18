@@ -1,0 +1,46 @@
+# Project: Proyek2_8PuzzleGame
+# Makefile created by Dev-C++ 5.7.1
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o game.o 171511060.o 171511052.o 171511041.o 171511057.o 171511038.o
+LINKOBJ  = main.o game.o 171511060.o 171511052.o 171511041.o 171511057.o 171511038.o
+LIBS     = -L"C:/Program Files (x86)/Mingw/lib" -static-libgcc -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
+INCS     = -I"C:/Program Files (x86)/Mingw/include"
+CXXINCS  = -I"C:/Program Files (x86)/Mingw/include"
+BIN      = Proyek2_8PuzzleGame.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+game.o: game.cpp
+	$(CPP) -c game.cpp -o game.o $(CXXFLAGS)
+
+171511060.o: 171511060.cpp
+	$(CPP) -c 171511060.cpp -o 171511060.o $(CXXFLAGS)
+
+171511052.o: 171511052.cpp
+	$(CPP) -c 171511052.cpp -o 171511052.o $(CXXFLAGS)
+
+171511041.o: 171511041.cpp
+	$(CPP) -c 171511041.cpp -o 171511041.o $(CXXFLAGS)
+
+171511057.o: 171511057.cpp
+	$(CPP) -c 171511057.cpp -o 171511057.o $(CXXFLAGS)
+
+171511038.o: 171511038.cpp
+	$(CPP) -c 171511038.cpp -o 171511038.o $(CXXFLAGS)
